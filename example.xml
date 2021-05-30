@@ -44,7 +44,7 @@
       <text>2. Multiple Choice</text>
     </name>
     <questiontext format="html">
-      <text>&lt;p&gt;What are your favourite programming languages? &lt;!-- @shuffle=false @numbering=123 --&gt;&lt;/p&gt;</text>
+      <text>&lt;p&gt;What are your favourite programming languages? &lt;!-- @shuffle=false @numbering=IIII --&gt;&lt;/p&gt;</text>
     </questiontext>
     <defaultgrade>1.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
@@ -68,7 +68,7 @@
     </tags>
     <shuffleanswers>false</shuffleanswers>
     <single>false</single>
-    <answernumbering>123</answernumbering>
+    <answernumbering>IIII</answernumbering>
     <answer fraction="50.0" format="html">
       <text>&lt;strong&gt;Python&lt;/strong&gt; (not the snake)</text>
     </answer>

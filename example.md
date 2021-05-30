@@ -10,7 +10,7 @@ What is the first answer?
 
 ## 2. Multiple Choice
 
-What are your favourite programming languages? <!-- @shuffle=false @numbering=123 -->
+What are your favourite programming languages? <!-- @shuffle=false @numbering=IIII -->
 
 - [x] **Python** (not the snake)
 - [x] **C++** ("C with Classes")
