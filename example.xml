@@ -1,0 +1,279 @@
+<quiz>
+  <question type="multichoice">
+    <name>
+      <text>1. Single Choice</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;What is the first answer?&lt;/p&gt;</text>
+    </questiontext>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <tags>
+      <tag>
+        <text>Group 1</text>
+      </tag>
+      <tag>
+        <text>easy</text>
+      </tag>
+      <tag>
+        <text>ovgu</text>
+      </tag>
+      <tag>
+        <text>comsys</text>
+      </tag>
+      <tag>
+        <text>multichoice</text>
+      </tag>
+    </tags>
+    <shuffleanswers>yes</shuffleanswers>
+    <single>true</single>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100.0" format="html">
+      <text>Answer 1</text>
+    </answer>
+    <answer fraction="-0.0" format="html">
+      <text>Answer 2</text>
+    </answer>
+    <answer fraction="-0.0" format="html">
+      <text>Answer 3</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>2. Multiple Choice</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;What are your favourite programming languages? &lt;!-- @shuffle=false @numbering=123 --&gt;&lt;/p&gt;</text>
+    </questiontext>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <tags>
+      <tag>
+        <text>Group 1</text>
+      </tag>
+      <tag>
+        <text>easy</text>
+      </tag>
+      <tag>
+        <text>ovgu</text>
+      </tag>
+      <tag>
+        <text>comsys</text>
+      </tag>
+      <tag>
+        <text>multichoice</text>
+      </tag>
+    </tags>
+    <shuffleanswers>false</shuffleanswers>
+    <single>false</single>
+    <answernumbering>123</answernumbering>
+    <answer fraction="50.0" format="html">
+      <text>&lt;strong&gt;Python&lt;/strong&gt; (not the snake)</text>
+    </answer>
+    <answer fraction="50.0" format="html">
+      <text>&lt;strong&gt;C++&lt;/strong&gt; ("C with Classes")</text>
+    </answer>
+    <answer fraction="-100.0" format="html">
+      <text>&lt;strong&gt;PHP&lt;/strong&gt; (Hypertext Preprocessor)</text>
+    </answer>
+  </question>
+  <question type="matching">
+    <name>
+      <text>3. Enumerated Matching</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Order the layers of the ISO/OSI model:&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The lowest number corresponds to the lowest layer.&lt;/p&gt;</text>
+    </questiontext>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <tags>
+      <tag>
+        <text>Group 1</text>
+      </tag>
+      <tag>
+        <text>intermediate</text>
+      </tag>
+      <tag>
+        <text>ovgu</text>
+      </tag>
+      <tag>
+        <text>comsys</text>
+      </tag>
+      <tag>
+        <text>matching</text>
+      </tag>
+    </tags>
+    <shuffleanswers>false</shuffleanswers>
+    <subquestion format="html">
+      <text>1.</text>
+      <answer>
+        <text>Physical Layer</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text>2.</text>
+      <answer>
+        <text>Data Link Layer</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text>3.</text>
+      <answer>
+        <text>Network Layer</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text>4.</text>
+      <answer>
+        <text>Transport Layer</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text>5.</text>
+      <answer>
+        <text>Session Layer</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text>6.</text>
+      <answer>
+        <text>Presentation Layer</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text>7.</text>
+      <answer>
+        <text>Application Layer</text>
+      </answer>
+    </subquestion>
+  </question>
+  <question type="matching">
+    <name>
+      <text>4. Associative Matching</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Select the right transport layer protocol for the following application layer protocols:&lt;/p&gt;</text>
+    </questiontext>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <tags>
+      <tag>
+        <text>Group 1</text>
+      </tag>
+      <tag>
+        <text>intermediate</text>
+      </tag>
+      <tag>
+        <text>ovgu</text>
+      </tag>
+      <tag>
+        <text>comsys</text>
+      </tag>
+      <tag>
+        <text>matching</text>
+      </tag>
+    </tags>
+    <shuffleanswers>yes</shuffleanswers>
+    <subquestion format="html">
+      <text>HTTP</text>
+      <answer>
+        <text>TCP</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text>CoAP</text>
+      <answer>
+        <text>UDP</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text>SMTP</text>
+      <answer>
+        <text>TCP</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text>OpenVPN</text>
+      <answer>
+        <text>both possible</text>
+      </answer>
+    </subquestion>
+  </question>
+  <question type="shortanswer">
+    <name>
+      <text>5. Short Answer</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;What is 2+2?&lt;/p&gt;</text>
+    </questiontext>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <tags>
+      <tag>
+        <text>Group 1</text>
+      </tag>
+      <tag>
+        <text>intermediate</text>
+      </tag>
+      <tag>
+        <text>ovgu</text>
+      </tag>
+      <tag>
+        <text>comsys</text>
+      </tag>
+      <tag>
+        <text>shortanswer</text>
+      </tag>
+    </tags>
+    <answer fraction="100.0" format="html">
+      <text>4</text>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>6. Forced Multiple Choice with Single Correct Answer</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;Is this valid ... code? &lt;!-- @force_multi=true --&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class="language-cpp"&gt;int *p = new int;
+delete p;
+&lt;/code&gt;&lt;/pre&gt;</text>
+    </questiontext>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <tags>
+      <tag>
+        <text>Group 1</text>
+      </tag>
+      <tag>
+        <text>intermediate</text>
+      </tag>
+      <tag>
+        <text>ovgu</text>
+      </tag>
+      <tag>
+        <text>comsys</text>
+      </tag>
+      <tag>
+        <text>multichoice</text>
+      </tag>
+    </tags>
+    <shuffleanswers>yes</shuffleanswers>
+    <single>false</single>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100.0" format="html">
+      <text>C++</text>
+    </answer>
+    <answer fraction="-0.0" format="html">
+      <text>C</text>
+    </answer>
+    <answer fraction="-0.0" format="html">
+      <text>Java</text>
+    </answer>
+  </question>
+</quiz>
