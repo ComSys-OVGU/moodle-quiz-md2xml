@@ -51,7 +51,7 @@ python3 moodle_quiz_md2xml/cli.py foo.md bar.md
 ```
 usage: moodle-md2xml [-h] [--config CONFIG_FILE] [--tags TAGS]
                      [--shuffle SHUFFLE_ANSWERS]
-                     [--numbering {abc,ABC,123,iii,IIII}] [--verbose]
+                     [--numbering {abc,ABC,123,iii,III,none}] [--verbose]
                      INPUT_FILE [INPUT_FILE ...]
 
 Converts specially formatted Markdown files containing quiz questions to
@@ -69,7 +69,7 @@ optional arguments:
   --shuffle SHUFFLE_ANSWERS, -s SHUFFLE_ANSWERS
                         shuffle answers by default (does not apply to
                         enumeration matching questions)
-  --numbering {abc,ABC,123,iii,IIII}, -n {abc,ABC,123,iii,IIII}
+  --numbering {abc,ABC,123,iii,III,none}, -n {abc,ABC,123,iii,III,none}
                         default numbering scheme for single / multiple choice
                         questions
   --verbose, -v         enable some verbose / debug output
@@ -183,7 +183,7 @@ Question Text <!-- @{key1}={value1} @{key2}={value2} -->
 | Option                              | Description                                                                          |
 |-------------------------------------|--------------------------------------------------------------------------------------|
 | `@shuffle={true,false}`             | Shuffle answers randomly in Moodle (default: true, except enumerated matching)       |
-| `@numbering={abc,ABC,123,iii,IIII}` | Sets numbering format<br>*Only for single / multiple choice questions!*              |
+| `@numbering={abc,ABC,123,iii,III,none}` | Sets numbering format<br>*Only for single / multiple choice questions!*              |
 | `@force_multi=true`                 | Forces single choice question (only one correct answer) to appear as multiple choice |
 
 ## Implementation Details

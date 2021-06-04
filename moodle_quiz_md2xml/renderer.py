@@ -69,7 +69,7 @@ class Question:
 		:param tags: tags
 		:param shuffle_answers: shuffle answers
 		:param numbering: numbering of answers, possible values: abc, ABC, 123, iii (for i., ii., iii.),
-			IIII (for I., II., III.)
+			III (for I., II., III.), none
 		:param answers: list of possible answers (only for :py:const:`~QuestionType.MULTICHOICE` and
 			:py:const:`~QuestionType.SHORTANSWER`)
 		:param single_choice: single choice (only for :py:const:`~QuestionType.MULTICHOICE`)
