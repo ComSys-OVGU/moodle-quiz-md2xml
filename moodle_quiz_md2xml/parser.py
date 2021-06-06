@@ -16,7 +16,7 @@ class Parser:
 
 	See :py:meth:`~Parser.parse` method for info about usage.
 	"""
-	NUMBERING_OPTIONS = ['abc', 'ABC', '123', 'iii', 'IIII']
+	NUMBERING_OPTIONS = ['abc', 'ABC', '123', 'iii', 'IIII', 'none']
 	NUMBERING_KEYS = ['numbering', 'answernumbering']
 	SHUFFLE_ANSWERS_KEYS = ['suffleanswers', 'shuffle_answers', 'shuffle']
 	FORCE_MULTIPLE_CHOICE_KEYS = ['force_multi', 'force_multiple_choice', 'multi']
@@ -39,8 +39,8 @@ class Parser:
 			"""
 			Initializes configuration.
 
-			:param numbering: numbering of answers, possible values: abc, ABC, 123, iii (for i., ii., iii.),
-				IIII (for I., II., III.)
+			:param numbering: numbering of answers, possible values: 'abc', 'ABC', '123', 'iii' (for i., ii., iii.),
+				'IIII' (for I., II., III.), 'none'
 			:param shuffle_answers: shuffle answers by default (does not apply to enumeration matching questions)
 			:param general_tags: list of tags that shall always be added to every question
 			:param multichoice_tags: list of tags that shall be added to multiple choice questions
