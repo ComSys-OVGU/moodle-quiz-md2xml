@@ -30,6 +30,7 @@ class QuestionType(Enum):
 	MULTICHOICE = 'multichoice'
 	MATCHING = 'matching'
 	SHORTANSWER = 'shortanswer'
+	NUMERICAL = 'numerical'
 	UNKNOWN = None
 
 
@@ -198,14 +199,14 @@ class MoodleXmlRenderer(Renderer):
 				xml_question.append(e.SINGLE(str(question.single_choice).lower()))
 				xml_question.append(e.ANSWERNUMBERING(question.numbering))
 
-			if question.type == QuestionType.MULTICHOICE or question.type == QuestionType.SHORTANSWER:
+			if question.type in [QuestionType.MULTICHOICE, QuestionType.SHORTANSWER, QuestionType.NUMERICAL]:
 				for answer in question.answers:
 					xml_question.append(
 						e.ANSWER(
 							e.TEXT(answer.text),
 							# e.FEEDBACK(...),
 							fraction=str(answer.fraction * 100.0),
-							format='html'
+							format='html' if question.type != QuestionType.NUMERICAL else 'moodle_auto_format'
 						)
 					)
 			elif question.type == QuestionType.MATCHING:

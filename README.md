@@ -140,15 +140,24 @@ Select the right transport layer protocol for the following application layer pr
 - SMTP: TCP
 - OpenVPN: both possible
 
-## Group 3, hard
+# Group 3, hard
 
 ## 5. Short Answer
 
-What is 2+2?
+What is the name of the galaxy you (most likely) live in?
+<!-- wildcards allowed, see https://docs.moodle.org/311/en/Short-Answer_question_type -->
 
-- 4
+- Milky*Way
 
-## 6. Forced Multiple Choice with Single Correct Answer
+## 6. Numerical
+
+What is the answer to life, the universe and everything?
+
+- 42
+
+# Group 4
+
+## 7. Forced Multiple Choice with Single Correct Answer
 
 Is this valid ... code? <!-- @force_multi=true -->
 

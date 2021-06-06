@@ -54,7 +54,7 @@ def get_config() -> Dict[str, Union[str, List[str], Dict[str, str]]]:
 
 		config = {}
 		for key in ['numbering', 'shuffle_answers', 'general_tags', 'multichoice_tags', 'matching_tags',
-					'shortanswer_tags', 'matching_separator']:
+					'shortanswer_tags', 'numerical_tags', 'matching_separator']:
 			config[key] = config_parser.get('DEFAULT', key)
 
 		# localization = {}
@@ -74,7 +74,7 @@ def get_config() -> Dict[str, Union[str, List[str], Dict[str, str]]]:
 	merged = {**file_config, **arg_config}  # merges both dicts, the second one is overwriting the first
 
 	# reformat some stuff
-	for key in ['general_tags', 'multichoice_tags', 'matching_tags', 'shortanswer_tags']:
+	for key in ['general_tags', 'multichoice_tags', 'matching_tags', 'shortanswer_tags', 'numerical_tags']:
 		merged[key] = merged[key].split(',')
 
 	return merged

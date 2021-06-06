@@ -208,17 +208,17 @@
       <text>5. Short Answer</text>
     </name>
     <questiontext format="html">
-      <text>&lt;p&gt;What is 2+2?&lt;/p&gt;</text>
+      <text>&lt;p&gt;What is the name of the galaxy you (most likely) live in?&lt;/p&gt;&lt;p&gt;&lt;!-- wildcards allowed, see https://docs.moodle.org/311/en/Short-Answer_question_type --&gt;&lt;/p&gt;</text>
     </questiontext>
     <defaultgrade>1.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
     <tags>
       <tag>
-        <text>Group 1</text>
+        <text>Group 3</text>
       </tag>
       <tag>
-        <text>intermediate</text>
+        <text>hard</text>
       </tag>
       <tag>
         <text>ovgu</text>
@@ -231,12 +231,43 @@
       </tag>
     </tags>
     <answer fraction="100.0" format="html">
-      <text>4</text>
+      <text>Milky*Way</text>
+    </answer>
+  </question>
+  <question type="numerical">
+    <name>
+      <text>6. Numerical Question</text>
+    </name>
+    <questiontext format="html">
+      <text>&lt;p&gt;What is the answer to life, the universe and everything?&lt;/p&gt;</text>
+    </questiontext>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <tags>
+      <tag>
+        <text>Group 3</text>
+      </tag>
+      <tag>
+        <text>hard</text>
+      </tag>
+      <tag>
+        <text>ovgu</text>
+      </tag>
+      <tag>
+        <text>comsys</text>
+      </tag>
+      <tag>
+        <text>numerical</text>
+      </tag>
+    </tags>
+    <answer fraction="100.0" format="moodle_auto_format">
+      <text>42</text>
     </answer>
   </question>
   <question type="multichoice">
     <name>
-      <text>6. Forced Multiple Choice with Single Correct Answer</text>
+      <text>7. Forced Multiple Choice with Single Correct Answer</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt;Is this valid ... code? &lt;!-- @force_multi=true --&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class="language-cpp"&gt;int *p = new int;
@@ -248,10 +279,7 @@ delete p;
     <hidden>0</hidden>
     <tags>
       <tag>
-        <text>Group 1</text>
-      </tag>
-      <tag>
-        <text>intermediate</text>
+        <text>Group 4</text>
       </tag>
       <tag>
         <text>ovgu</text>

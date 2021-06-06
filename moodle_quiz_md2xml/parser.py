@@ -34,7 +34,8 @@ class Parser:
 		# noinspection PyUnusedLocal
 		def __init__(self, numbering: str = 'abc', shuffle_answers: bool = True, general_tags: PythonList[str] = None,
 					 multichoice_tags: PythonList[str] = None, matching_tags: PythonList[str] = None,
-					 shortanswer_tags: PythonList[str] = None, matching_separator: str = ':', **unused):
+					 shortanswer_tags: PythonList[str] = None, numerical_tags: PythonList[str] = None,
+					 matching_separator: str = ':', **unused):
 			"""
 			Initializes configuration.
 
@@ -45,6 +46,7 @@ class Parser:
 			:param multichoice_tags: list of tags that shall be added to multiple choice questions
 			:param matching_tags: list of tags that shall be added to matching questions
 			:param shortanswer_tags: list of tags that shall be added to short answer questions
+			:param numerical_tags: list of tags that shall be added to numerical questions
 			:param matching_separator: character to separate key and value in associative (non-enumerated) matching
 				questions
 			:param kwargs: unused
@@ -55,6 +57,7 @@ class Parser:
 			self.multichoice_tags = multichoice_tags if multichoice_tags is not None else []
 			self.matching_tags = matching_tags if matching_tags is not None else []
 			self.shortanswer_tags = shortanswer_tags if shortanswer_tags is not None else []
+			self.numerical_tags = numerical_tags if numerical_tags is not None else []
 			self.matching_separator = matching_separator
 
 	# our own span token for inline config strings with syntax @key=val
@@ -335,13 +338,18 @@ class Parser:
 		question.tags += self.config.matching_tags
 		question.subquestions = subquestions
 
-	def parse_list_as_short_answer(self, list_: List, question: Question):
+	def parse_list_as_short_answer_or_numerical(self, list_: List, question: Question):
 		text_rendered_html = self.render_list_item(list_.children[0])
 		answer = Answer(text_rendered_html, fraction=1.0)
 
+		if text_rendered_html.isnumeric():
+			question.type = QuestionType.NUMERICAL
+			question.tags += self.config.numerical_tags
+		else:
+			question.type = QuestionType.SHORTANSWER
+			question.tags += self.config.shortanswer_tags
+
 		question.answers = [answer]
-		question.type = QuestionType.SHORTANSWER
-		question.tags += self.config.shortanswer_tags
 
 	def parse_unordered_list(self, list_: List, question: Question):
 		if len(list_.children) < 1:
@@ -352,7 +360,7 @@ class Parser:
 			raise SyntaxError('A list item has no text.')
 
 		if len(list_.children) == 1:
-			self.parse_list_as_short_answer(list_, question)
+			self.parse_list_as_short_answer_or_numerical(list_, question)
 			return
 
 		assert (type(item.children[0]) is Paragraph)
@@ -362,7 +370,8 @@ class Parser:
 			raise SyntaxError('A list item has no text.')
 
 		if type(paragraph.children[0]) is RawText and (
-				paragraph.children[0].content.lower().startswith('[x] ') or paragraph.children[0].content.startswith('[ ] ')):
+				paragraph.children[0].content.lower().startswith('[x] ') or paragraph.children[0].content.startswith(
+			'[ ] ')):
 			self.parse_list_as_multichoice(list_, question)
 		else:
 			self.parse_list_as_associative_matching(list_, question)
@@ -428,7 +437,7 @@ class Parser:
 				if last_payload is None or type(last_payload) is not Question:
 					raise SyntaxError('A {} needs to follow a question (paragraph).'.format(type_.__name__))
 
-				assert(last_payload.text is not None)
+				assert (last_payload.text is not None)
 
 				with self._HTMLRenderer() as renderer:  # TODO: this might not be the best idea, maybe reuse renderers
 					last_payload.text += renderer.render(child)
