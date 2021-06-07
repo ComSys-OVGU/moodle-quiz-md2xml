@@ -25,6 +25,7 @@ class Parser:
 	QUESTION_TEXT_TYPES = [CodeFence]  # can follow paragraph and will just be added to question text rendered as HTML
 
 	html_tag_pattern = re.compile(r'(<!--.*?-->|<[^>]*>)')  # matches all HTML tags
+	numerical_pattern = re.compile(r'(^[-+]?([0-9]+)(\.[0-9]+)?)$')
 
 	class Config:
 		"""
@@ -340,16 +341,16 @@ class Parser:
 
 	def parse_list_as_short_answer_or_numerical(self, list_: List, question: Question):
 		text_rendered_html = self.render_list_item(list_.children[0])
-		answer = Answer(text_rendered_html, fraction=1.0)
 
-		if text_rendered_html.isnumeric():
-			question.type = QuestionType.NUMERICAL
-			question.tags += self.config.numerical_tags
-		else:
+		answer = Answer(text_rendered_html, fraction=1.0)
+		question.answers = [answer]
+
+		if self.numerical_pattern.match(text_rendered_html) is None:
 			question.type = QuestionType.SHORTANSWER
 			question.tags += self.config.shortanswer_tags
-
-		question.answers = [answer]
+		else:
+			question.type = QuestionType.NUMERICAL
+			question.tags += self.config.numerical_tags
 
 	def parse_unordered_list(self, list_: List, question: Question):
 		if len(list_.children) < 1:

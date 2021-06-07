@@ -236,7 +236,7 @@
   </question>
   <question type="numerical">
     <name>
-      <text>6. Numerical Question</text>
+      <text>6. Numerical</text>
     </name>
     <questiontext format="html">
       <text>&lt;p&gt;What is the answer to life, the universe and everything?&lt;/p&gt;</text>
