@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='moodle_quiz_md2xml',
-	  version='0.1',
+	  version='1.0',
 	  description='Tool and module to convert strictly formatted Markdown files to Moodle\'s XML format which can be '
 				  'imported easily',
 	  url='https://github.com/ComSys-OVGU/moodle-quiz-md2xml',
