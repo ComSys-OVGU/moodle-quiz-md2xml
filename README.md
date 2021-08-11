@@ -49,10 +49,11 @@ python3 moodle_quiz_md2xml/cli.py foo.md bar.md
 ---
 
 ```
-usage: moodle-md2xml [-h] [--config CONFIG_FILE] [--tags TAGS]
-              [--shuffle SHUFFLE_ANSWERS] [--numbering {abc,ABC,123,iii,III}]
-              [--remove-comments REMOVE_COMMENTS] [--verbose]
-              INPUT_FILE [INPUT_FILE ...]
+sage: moodle-md2xml [-h] [--config CONFIG_FILE] [--tags TAGS]
+                     [--shuffle SHUFFLE_ANSWERS]
+                     [--numbering {abc,ABC,123,iii,IIII,none}]
+                     [--remove-comments REMOVE_COMMENTS] [--verbose]
+                     INPUT_FILE [INPUT_FILE ...]
 
 Converts specially formatted Markdown files containing quiz questions to
 Moodle's quiz XML format
@@ -63,18 +64,20 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   --config CONFIG_FILE, -c CONFIG_FILE
-                        configuration file (if not set: using default.ini)
+                        configuration file path (if not set: using packaged
+                        default.ini)
   --tags TAGS, -t TAGS  comma-separated list of tags that shall always be
                         added to questions
   --shuffle SHUFFLE_ANSWERS, -s SHUFFLE_ANSWERS
                         shuffle answers by default (does not apply to
-                        enumeration matching questions)
-  --remove-comments REMOVE_COMMENTS, -r REMOVE_COMMENTS
-                        remove HTML comments from Markdown before doing any
-                        parsing
+                        enumeration matching questions), possible values: true
+                        (default), false
   --numbering {abc,ABC,123,iii,IIII,none}, -n {abc,ABC,123,iii,IIII,none}
                         default numbering scheme for single / multiple choice
                         questions
+  --remove-comments REMOVE_COMMENTS, -r REMOVE_COMMENTS
+                        remove HTML comments from Markdown before doing any
+                        parsing, possible values: true (default), false
   --verbose, -v         enable some verbose / debug output
 ```
 

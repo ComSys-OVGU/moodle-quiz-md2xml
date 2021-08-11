@@ -30,16 +30,16 @@ def get_config() -> Dict[str, Union[str, List[str], Dict[str, str]]]:
 								help='Markdown files to convert, wildcards '
 									 'are allowed')
 		arg_parser.add_argument('--config', '-c', dest='config_file', type=str, default=None, required=False,
-								help='configuration file (if not set: using default.ini)')
+								help='configuration file path (if not set: using packaged default.ini)')
 		arg_parser.add_argument('--tags', '-t', dest='tags', type=str, required=False,
 								help='comma-separated list of tags that shall always be added to questions')
 		arg_parser.add_argument('--shuffle', '-s', dest='shuffle_answers', type=bool, required=False,
-								help='shuffle answers by default (does not apply to enumeration matching questions)')
+								help='shuffle answers by default (does not apply to enumeration matching questions), possible values: true (default), false')
 		arg_parser.add_argument('--numbering', '-n', dest='numbering', type=str, required=False,
 								choices=Parser.NUMBERING_OPTIONS,
 								help='default numbering scheme for single / multiple choice questions')
 		arg_parser.add_argument('--remove-comments', '-r', dest='remove_comments', type=bool, required=False,
-								help='remove HTML comments from Markdown before doing any parsing')
+								help='remove HTML comments from Markdown before doing any parsing, possible values: true (default), false')
 		arg_parser.add_argument('--verbose', '-v', dest='verbose', action='store_true',
 								help='enable some verbose / debug output')
 		config = arg_parser.parse_args()
