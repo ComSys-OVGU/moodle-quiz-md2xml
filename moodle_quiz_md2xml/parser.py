@@ -78,8 +78,7 @@ class Parser:
 
 		# noinspection PyMethodMayBeStatic
 		def render_inline_config(self, token):
-			template = '@{key}={value}'
-			return template.format(key=token.key, value=token.value)
+			return ''
 
 		# overwrite method to disable escaping HTML symbols (makes problems for using HTML in Moodle XML)
 		@staticmethod

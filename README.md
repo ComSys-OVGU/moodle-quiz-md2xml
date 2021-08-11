@@ -50,9 +50,9 @@ python3 moodle_quiz_md2xml/cli.py foo.md bar.md
 
 ```
 usage: moodle-md2xml [-h] [--config CONFIG_FILE] [--tags TAGS]
-                     [--shuffle SHUFFLE_ANSWERS]
-                     [--numbering {abc,ABC,123,iii,IIII,none}] [--verbose]
-                     INPUT_FILE [INPUT_FILE ...]
+              [--shuffle SHUFFLE_ANSWERS] [--numbering {abc,ABC,123,iii,III}]
+              [--remove-comments REMOVE_COMMENTS] [--verbose]
+              INPUT_FILE [INPUT_FILE ...]
 
 Converts specially formatted Markdown files containing quiz questions to
 Moodle's quiz XML format
@@ -69,6 +69,9 @@ optional arguments:
   --shuffle SHUFFLE_ANSWERS, -s SHUFFLE_ANSWERS
                         shuffle answers by default (does not apply to
                         enumeration matching questions)
+  --remove-comments REMOVE_COMMENTS, -r REMOVE_COMMENTS
+                        remove HTML comments from Markdown before doing any
+                        parsing
   --numbering {abc,ABC,123,iii,IIII,none}, -n {abc,ABC,123,iii,IIII,none}
                         default numbering scheme for single / multiple choice
                         questions
@@ -111,7 +114,7 @@ What is the first answer?
 
 ## 2. Multiple Choice
 
-What are your favourite programming languages? <!-- @shuffle=false @numbering=123 -->
+What are your favourite programming languages? @shuffle=false @numbering=123
 
 - [x] **Python** (not the snake)
 - [x] **C++** ("C with Classes")
@@ -159,7 +162,7 @@ What is the answer to life, the universe and everything?
 
 ## 7. Forced Multiple Choice with Single Correct Answer
 
-Is this valid ... code? <!-- @force_multi=true -->
+Is this valid ... code? @force_multi=true
 
 ```cpp
 int *p = new int;
@@ -169,6 +172,18 @@ delete p;
 - [x] C++
 - [ ] C
 - [ ] Java
+
+<!--
+# Group 5, commented out
+
+## 8. Commented Out
+
+This question will not be part of the rendered XML file.
+
+- [x] Answer 1
+- [ ] Answer 2
+- [ ] Answer 3
+-->
 ````
 
 For example, question 1 and 2 would have tags `Group 1` and `easy`.
@@ -180,11 +195,10 @@ question is multiple choice.
 ### Inline Configuration
 
 Some things can be configured with key-value pairs that look like `@{key}={value}` that you can put into paragraphs
-(not code blocks etc.). They are also shown in the example above. To not make them visible, just wrap them in HTML
-comments:
+(not code blocks etc.). They are also shown in the example above.
 
 ```markdown
-Question Text <!-- @{key1}={value1} @{key2}={value2} -->
+Question Text @{key1}={value1} @{key2}={value2}
 ```
 
 #### Implemented Configuration Options

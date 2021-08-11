@@ -44,7 +44,7 @@
       <text>2. Multiple Choice</text>
     </name>
     <questiontext format="html">
-      <text>&lt;p&gt;What are your favourite programming languages? &lt;!-- @shuffle=false @numbering=IIII --&gt;&lt;/p&gt;</text>
+      <text>&lt;p&gt;What are your favourite programming languages?  &lt;/p&gt;</text>
     </questiontext>
     <defaultgrade>1.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
@@ -208,7 +208,7 @@
       <text>5. Short Answer</text>
     </name>
     <questiontext format="html">
-      <text>&lt;p&gt;What is the name of the galaxy you (most likely) live in?&lt;/p&gt;&lt;p&gt;&lt;!-- wildcards allowed, see https://docs.moodle.org/311/en/Short-Answer_question_type --&gt;&lt;/p&gt;</text>
+      <text>&lt;p&gt;What is the name of the galaxy you (most likely) live in?&lt;/p&gt;</text>
     </questiontext>
     <defaultgrade>1.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
@@ -270,7 +270,7 @@
       <text>7. Forced Multiple Choice with Single Correct Answer</text>
     </name>
     <questiontext format="html">
-      <text>&lt;p&gt;Is this valid ... code? &lt;!-- @force_multi=true --&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class="language-cpp"&gt;int *p = new int;
+      <text>&lt;p&gt;Is this valid ... code? &lt;/p&gt;&lt;pre&gt;&lt;code class="language-cpp"&gt;int *p = new int;
 delete p;
 &lt;/code&gt;&lt;/pre&gt;</text>
     </questiontext>

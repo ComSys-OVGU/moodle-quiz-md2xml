@@ -10,7 +10,7 @@ What is the first answer?
 
 ## 2. Multiple Choice
 
-What are your favourite programming languages? <!-- @shuffle=false @numbering=IIII -->
+What are your favourite programming languages? @shuffle=false @numbering=IIII
 
 - [x] **Python** (not the snake)
 - [x] **C++** ("C with Classes")
@@ -60,7 +60,7 @@ What is the answer to life, the universe and everything?
 
 ## 7. Forced Multiple Choice with Single Correct Answer
 
-Is this valid ... code? <!-- @force_multi=true -->
+Is this valid ... code? @force_multi=true
 
 ```cpp
 int *p = new int;
@@ -70,3 +70,15 @@ delete p;
 - [x] C++
 - [ ] C
 - [ ] Java
+
+<!--
+# Group 5, commented out
+
+## 8. Commented Out
+
+This question will not be part of the rendered XML file.
+
+- [x] Answer 1
+- [ ] Answer 2
+- [ ] Answer 3
+-->

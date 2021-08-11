@@ -1,5 +1,6 @@
 import os
 import argparse
+import re
 from glob import glob
 from pathlib import Path
 from configparser import ConfigParser
@@ -37,6 +38,8 @@ def get_config() -> Dict[str, Union[str, List[str], Dict[str, str]]]:
 		arg_parser.add_argument('--numbering', '-n', dest='numbering', type=str, required=False,
 								choices=Parser.NUMBERING_OPTIONS,
 								help='default numbering scheme for single / multiple choice questions')
+		arg_parser.add_argument('--remove-comments', '-r', dest='remove_comments', type=bool, required=False,
+								help='remove HTML comments from Markdown before doing any parsing')
 		arg_parser.add_argument('--verbose', '-v', dest='verbose', action='store_true',
 								help='enable some verbose / debug output')
 		config = arg_parser.parse_args()
@@ -53,7 +56,7 @@ def get_config() -> Dict[str, Union[str, List[str], Dict[str, str]]]:
 			config_parser.read_file(file)
 
 		config = {}
-		for key in ['numbering', 'shuffle_answers', 'general_tags', 'multichoice_tags', 'matching_tags',
+		for key in ['numbering', 'shuffle_answers', 'remove_comments', 'general_tags', 'multichoice_tags', 'matching_tags',
 					'shortanswer_tags', 'numerical_tags', 'matching_separator']:
 			config[key] = config_parser.get('DEFAULT', key)
 
@@ -76,6 +79,12 @@ def get_config() -> Dict[str, Union[str, List[str], Dict[str, str]]]:
 	# reformat some stuff
 	for key in ['general_tags', 'multichoice_tags', 'matching_tags', 'shortanswer_tags', 'numerical_tags']:
 		merged[key] = merged[key].split(',')
+	for key in ['remove_comments']:
+		if type(merged[key]) is str:
+			if merged[key] == 'yes':
+				merged[key] = True
+			else:
+				merged[key] = False
 
 	return merged
 
@@ -97,7 +106,13 @@ def main():
 			print(file_path)
 
 			with open(file_path, 'r') as file:
-				document = Document(file)
+				raw_str = file.read()
+
+				# remove HTML comments on request
+				if config['remove_comments'] is True:
+					raw_str = re.sub('(<!--.*?-->)', '', raw_str, flags=re.DOTALL)
+
+				document = Document(raw_str)
 
 			if document is None:
 				raise IOError('Could not open specified Markdown file.')
