@@ -102,6 +102,9 @@ def main():
 		# resolve wildcards
 		file_paths = glob(raw_path)
 
+		if len(file_paths) == 0:
+			raise IOError('No Markdown file specified in path: ' + raw_path)
+
 		for file_path in file_paths:
 			print(file_path)
 
