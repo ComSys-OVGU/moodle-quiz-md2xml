@@ -9,7 +9,7 @@ setup(name='moodle_quiz_md2xml',
 	  author_email='jgraeffe@ovgu.de',
 	  license='MIT',
 	  packages=['moodle_quiz_md2xml'],
-	  install_requires=['mistletoe>=0.7.2', 'lxml>=4.6.3'],
+	  install_requires=['mistletoe>=0.9.0', 'lxml>=4.9.1'],
 	  python_requires='~=3.5',
 	  include_package_data=True,
 	  entry_points={
