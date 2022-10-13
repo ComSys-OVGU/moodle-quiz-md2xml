@@ -73,7 +73,7 @@
       <text>&lt;strong&gt;Python&lt;/strong&gt; (not the snake)</text>
     </answer>
     <answer fraction="50.0" format="html">
-      <text>&lt;strong&gt;C++&lt;/strong&gt; ("C with Classes")</text>
+      <text>&lt;strong&gt;C++&lt;/strong&gt; (&amp;quot;C with Classes&amp;quot;)</text>
     </answer>
     <answer fraction="-100.0" format="html">
       <text>&lt;strong&gt;PHP&lt;/strong&gt; (Hypertext Preprocessor)</text>
