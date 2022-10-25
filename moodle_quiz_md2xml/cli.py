@@ -25,6 +25,8 @@ def get_config() -> Dict[str, Union[str, List[str], Dict[str, str]]]:
 	def get_arg_config():
 		arg_parser = argparse.ArgumentParser(description='Converts specially formatted Markdown files containing quiz '
 														 'questions to Moodle\'s quiz XML format',
+											 epilog='''It is allowed to add configuration options to the Markdown text that are interpreted by the parser. The options are:\n@shuffle={true,false} - Shuffle answers randomly in Moodle (default: true, except enumerated matching)\n@numbering={abc,ABC,123,iii,IIII,none} - Sets numbering format (Only for single / multiple choice questions!)\n@force_multi=true - Forces single choice question (only one correct answer) to appear as multiple choice''',
+											 formatter_class=argparse.RawTextHelpFormatter,
 											 argument_default=argparse.SUPPRESS)
 		arg_parser.add_argument('input_files', metavar='INPUT_FILE', nargs='+',
 								help='Markdown files to convert, wildcards '
