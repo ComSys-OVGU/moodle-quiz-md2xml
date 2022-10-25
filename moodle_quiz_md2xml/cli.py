@@ -14,7 +14,8 @@ from moodle_quiz_md2xml.parser import Parser
 from moodle_quiz_md2xml.renderer import MoodleXmlRenderer
 
 
-DESCRIPTION = 'Converts specially formatted Markdown files containing quiz questions to Moodle\'s quiz XML format'
+DESCRIPTION = '''Converts specially formatted Markdown files containing quiz questions to Moodle\'s quiz XML format.
+See https://github.com/ComSys-OVGU/moodle-quiz-md2xml/blob/main/README.md for special format specification.'''
 EPILOG = '''It is allowed to add configuration options to the Markdown text that are interpreted by the parser. The options are:
 @shuffle={true,false}\t\t\t- shuffle answers randomly in Moodle (default: true, except enumerated matching)
 @numbering={abc,ABC,123,iii,IIII,none}\t- sets numbering format (only for single / multiple choice questions!)
