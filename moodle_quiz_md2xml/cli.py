@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import os
 import argparse
 import re
@@ -141,7 +139,3 @@ def main():
 				file.write(xml.decode('UTF-8'))
 
 	print('done')
-
-
-if __name__ == '__main__':
-	main()

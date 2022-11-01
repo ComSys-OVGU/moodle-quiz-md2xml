@@ -31,7 +31,7 @@ moodle-md2xml foo.md bar.md
 # will write foo.xml and bar.xml when no error occurred
 ```
 
-### Use Code Directly
+### As Python Script (without installation)
 
 2. install dependencies
 
@@ -42,7 +42,7 @@ pip3 install -r requirements.txt
 3. run `cli.py`
 
 ```shell
-python3 moodle_quiz_md2xml/cli.py foo.md bar.md
+python3 main.py foo.md bar.md
 # will write foo.xml and bar.xml when no error occurred
 ```
 
