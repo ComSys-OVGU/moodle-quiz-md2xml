@@ -46,7 +46,7 @@ python3 main.py foo.md folder/bar.md
 # will write foo.xml and folder/bar.xml when no error occurred
 ```
 
-### As a Library programmatically
+### As Library programmatically
 
 2. run install script (also used to update)
 
