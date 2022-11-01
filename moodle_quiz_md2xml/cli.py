@@ -139,3 +139,7 @@ def main():
 				file.write(xml.decode('UTF-8'))
 
 	print('done')
+
+
+if __name__ == '__main__':
+	main()
