@@ -21,14 +21,14 @@ cd moodle-quiz-md2xml
 2. run install script (also used to update)
 
 ```shell
-pip3 install .
+pip3 install --user .
 ```
 
 3. process your Markdown file(s)
 
 ```shell
-moodle-md2xml foo.md bar.md
-# will write foo.xml and bar.xml when no error occurred
+moodle-md2xml foo.md folder/bar.md
+# will write foo.xml and folder/bar.xml when no error occurred
 ```
 
 ### As Python Script (without installation)
@@ -42,9 +42,22 @@ pip3 install -r requirements.txt
 3. run `cli.py`
 
 ```shell
-python3 main.py foo.md bar.md
-# will write foo.xml and bar.xml when no error occurred
+python3 main.py foo.md folder/bar.md
+# will write foo.xml and folder/bar.xml when no error occurred
 ```
+
+### As a Library programmatically
+
+2. run install script (also used to update)
+
+```shell
+pip3 install --user .
+```
+
+3. implement library in your application
+
+    See `test.py` for an example on how to use the library and take a look at the
+[Implementation Details](#implementation-details).
 
 ---
 
