@@ -21,7 +21,7 @@ cd moodle-quiz-md2xml
 2. run install script (also used to update)
 
 ```shell
-pip3 install --user .
+pipx install .
 ```
 
 3. process your Markdown file(s)
@@ -36,7 +36,7 @@ moodle-md2xml foo.md folder/bar.md
 2. install dependencies
 
 ```shell
-pip3 install -r requirements.txt
+pipx install -r requirements.txt
 ```
 
 3. run `cli.py`
@@ -51,7 +51,7 @@ python3 main.py foo.md folder/bar.md
 2. run install script (also used to update)
 
 ```shell
-pip3 install --user .
+pipx install .
 ```
 
 3. implement library in your application
